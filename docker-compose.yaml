@@ -1,0 +1,20 @@
+version: "3"
+services:
+  gae-dev:
+    build: ./docker
+    container_name: gcloudgolang
+    environment:
+      TZ: "Asia/Tokyo"
+    working_dir: /work
+    volumes:
+      - "./src:/work:rw"
+      - "./gcloud-config:/root/.config/gcloud:rw"
+    ports:
+      - "8080:8080"
+      - "8000:8000"
+    command: [
+      "dev_appserver.py",
+      "/work/app.yaml",
+      "--host", "0.0.0.0",
+      "--admin_host", "0.0.0.0"
+    ]

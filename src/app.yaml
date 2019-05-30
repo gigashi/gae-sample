@@ -1,0 +1,6 @@
+runtime: go111
+threadsafe: yes
+
+handlers:
+- url: /.*
+  script: auto
