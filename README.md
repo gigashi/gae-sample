@@ -21,5 +21,5 @@ make run-gcloud
 
 ```bash
 gcloud projects list
-gcloud app deploy --project <project_name>
+gcloud app deploy --project <project_id>
 ```
